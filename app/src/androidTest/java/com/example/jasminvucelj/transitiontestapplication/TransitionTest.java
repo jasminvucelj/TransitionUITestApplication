@@ -8,6 +8,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import static android.support.test.espresso.Espresso.onView;
+import static android.support.test.espresso.Espresso.pressBack;
 import static android.support.test.espresso.action.ViewActions.click;
 import static android.support.test.espresso.assertion.ViewAssertions.matches;
 import static android.support.test.espresso.matcher.ViewMatchers.isDisplayed;
@@ -25,6 +26,11 @@ public class TransitionTest {
 	@Test
 	public void testTransition() {
 		onView(withId(R.id.button)).perform(click());
-		onView(withId(R.id.textview)).check(matches(isDisplayed()));
+		//onView(withId(R.id.textview)).check(matches(isDisplayed()));
+
+		pressBack();
+
+		//onView(withId(R.id.button)).check(matches(withText(containsString("Hello World!"))));
+		onView(withId(R.id.button)).check(matches(isDisplayed()));
 	}
 }
